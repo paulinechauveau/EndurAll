@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Txt from '../components/Txt.astro';
 import { SITE } from '../config';
 import { getReglages } from '../lib/site';
 
@@ -20,15 +21,15 @@ const r = await getReglages();
         <h2>Éditeur du site</h2>
         <p>
           {r.raison_sociale}<br />
-          Statut : {r.statut}<br />
-          Adresse : {r.adresse}<br />
-          SIRET : {r.siret}<br />
-          E-mail : {r.email}<br />
-          Téléphone : {r.telephone}
+          Statut : <Txt value={r.statut} /><br />
+          Adresse : <Txt value={r.adresse} /><br />
+          SIRET : <Txt value={r.siret} /><br />
+          E-mail : <Txt value={r.email} /><br />
+          Téléphone : <Txt value={r.telephone} />
         </p>
 
         <h2>Directeur de la publication</h2>
-        <p>{r.directeur_publication}</p>
+        <p><Txt value={r.directeur_publication} /></p>
 
         <h2>Hébergement</h2>
         <p>

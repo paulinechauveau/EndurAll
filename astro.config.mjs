@@ -13,7 +13,11 @@ const PREFIX = BASE.replace(/\/$/, '');
 export default defineConfig({
   site: SITE,
   base: BASE,
-  integrations: [tailwind(), sitemap()],
+  integrations: [
+    tailwind(),
+    // La page merci (après envoi du formulaire) n'a pas à être référencée
+    sitemap({ filter: (page) => !page.includes('/merci') }),
+  ],
   // Anciennes adresses → nouvelles pages
   redirects: {
     '/offres': `${PREFIX}/coaching`,

@@ -15,7 +15,7 @@ const r = await getReglages();
 const apercu = Boolean(import.meta.env.PUBLIC_APERCU);
 
 const rubriques = [
-  { cle: 'rapport_au_sport', titre: 'Le sport et moi' },
+  { cle: 'rapport_au_sport', titre: 'Rapport au sport' },
   { cle: 'parcours', titre: 'Parcours' },
   { cle: 'pourquoi_coach', titre: 'Pourquoi coach ?' },
   { cle: 'vision', titre: 'Vision du coaching' },
@@ -112,7 +112,7 @@ const champ =
         <!-- Carte de visite -->
         <aside class="h-fit rounded-3xl bg-brand-gradient p-8 text-white shadow-xl" data-reveal>
           <div class="flex items-center gap-3">
-            <img src={url('/images/logo-endurall-detoure.png')} alt="" width="56" height="56" class="h-14 w-14" />
+            <img src={url('/images/logo-endurall-128.webp')} alt="" width="56" height="56" class="h-14 w-14" />
             <div>
               <p class="font-display text-xl font-extrabold">{SITE.name}</p>
               <p class="text-sm text-white/80">Elo & Guillaume</p>
@@ -178,6 +178,7 @@ const champ =
             <label class="block text-sm font-medium">
               Discipline recherchée
               <select name="discipline" required class={champ}>
+                <option value="" disabled selected>Choisis…</option>
                 {coaching.disciplines.map((d) => <option>{d.titre}</option>)}
                 <option>Je ne sais pas encore</option>
               </select>
@@ -185,6 +186,7 @@ const champ =
             <label class="block text-sm font-medium">
               Ton niveau actuel
               <select name="niveau" required class={champ}>
+                <option value="" disabled selected>Choisis…</option>
                 {niveaux.map((n) => <option>{n}</option>)}
               </select>
             </label>
