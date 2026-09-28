@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/site';
+---
+
+<Base title="Merci" description="Ta demande a bien été envoyée.">
+  <section class="container-px flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+    <img src={url('/images/logo-endurall-detoure.png')} alt="" width="96" height="96" class="h-24 w-24" />
+    <h1 class="mt-6 text-3xl font-extrabold sm:text-4xl">Message bien reçu&nbsp;!</h1>
+    <p class="mt-4 max-w-md text-brand-ink/70">
+      Merci pour ta demande. On revient vers toi très vite pour échanger sur ton objectif
+      et construire la suite ensemble.
+    </p>
+    <a href={url('/')} class="btn-primary mt-8">Retour à l’accueil</a>
+  </section>
+</Base>

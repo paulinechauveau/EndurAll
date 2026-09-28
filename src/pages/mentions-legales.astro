@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+import { getReglages } from '../lib/site';
+
+const r = await getReglages();
+---
+
+<Base title="Mentions légales">
+  <section class="container-px py-16 md:py-20">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-3xl font-extrabold sm:text-4xl">Mentions légales</h1>
+      <div class="prose mt-8 max-w-none text-brand-ink/80">
+        <p class="text-sm text-brand-ink/50">
+          Les informations ci-dessous se modifient dans « Réglages » depuis l’administration du site.
+        </p>
+
+        <h2>Éditeur du site</h2>
+        <p>
+          {r.raison_sociale}<br />
+          Statut : {r.statut}<br />
+          Adresse : {r.adresse}<br />
+          SIRET : {r.siret}<br />
+          E-mail : {r.email}<br />
+          Téléphone : {r.telephone}
+        </p>
+
+        <h2>Directeur de la publication</h2>
+        <p>{r.directeur_publication}</p>
+
+        <h2>Hébergement</h2>
+        <p>
+          Netlify, Inc.<br />
+          512 2nd Street, Suite 200, San Francisco, CA 94107, USA<br />
+          https://www.netlify.com
+        </p>
+
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          L’ensemble des contenus (textes, logo, photos) présents sur ce site sont la propriété de
+          {SITE.name}, sauf mention contraire. Toute reproduction sans autorisation est interdite.
+        </p>
+
+        <h2>Responsabilité</h2>
+        <p>
+          Les conseils proposés sur ce site sont de nature générale et ne remplacent pas un avis
+          médical. Avant de reprendre ou d’intensifier une activité physique, demande conseil à un
+          professionnel de santé.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

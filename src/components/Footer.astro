@@ -1,0 +1,68 @@
+---
+import { NAV, SITE } from '../config';
+import Icon from './Icon.astro';
+import { url, getReglages, estRenseigne, aCompleter } from '../lib/site';
+
+const r = await getReglages();
+const year = new Date().getFullYear();
+
+const contacts = [
+  { icon: 'instagram', label: 'Instagram', value: r.instagram, href: r.instagram },
+  { icon: 'mail', label: r.email, value: r.email, href: `mailto:${r.email}` },
+  { icon: 'telephone', label: r.telephone, value: r.telephone, href: `tel:${r.telephone.replace(/\s/g, '')}` },
+] as const;
+---
+
+<footer class="mt-20 border-t border-brand-ink/10 bg-brand-ink text-white">
+  <div class="container-px grid gap-10 py-14 md:grid-cols-3">
+    <div>
+      <div class="flex items-center gap-2.5">
+        <img src={url('/images/logo-endurall-detoure.png')} alt="" width="48" height="48" class="h-12 w-12" />
+        <span class="font-display text-lg font-extrabold">{SITE.name}</span>
+      </div>
+      <p class="mt-4 max-w-xs text-sm text-white/70">{SITE.tagline}.</p>
+      <a href={url('/a-propos#contact')} class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-orange hover:text-white">
+        Prendre contact <Icon name="fleche" class="h-4 w-4" />
+      </a>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-widest text-white/50">Navigation</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        {NAV.map((item) => (
+          <li><a href={url(item.href)} class="text-white/80 transition-colors hover:text-white">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-widest text-white/50">Coordonnées</h3>
+      <ul class="mt-4 space-y-3 text-sm">
+        {contacts.map((c) => (
+          <li class="flex items-center gap-3">
+            <Icon name={c.icon} class="h-4 w-4 shrink-0 text-white/50" />
+            {estRenseigne(c.value) ? (
+              <a href={c.href} target={c.icon === 'instagram' ? '_blank' : undefined} rel="noopener" class="break-all text-white/80 transition-colors hover:text-white">{c.label}</a>
+            ) : (
+              <span class="text-white/60">{c.icon === 'instagram' ? 'Instagram : ' : ''}<span class="a-completer">[À COMPLÉTER]</span></span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="container-px flex flex-col items-center justify-between gap-3 py-6 text-center text-xs text-white/60 sm:flex-row sm:text-left">
+      <p>
+        © {year} {r.raison_sociale} · SIRET :{' '}
+        <span class:list={[aCompleter(r.siret) && 'a-completer']}>{r.siret}</span>
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href={url('/mentions-legales')} class="hover:text-white">Mentions légales</a>
+        <a href={url('/confidentialite')} class="hover:text-white">Confidentialité</a>
+        {estRenseigne(r.cgv) && <a href={url(r.cgv)} class="hover:text-white">CGV</a>}
+      </div>
+    </div>
+  </div>
+</footer>

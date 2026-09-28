@@ -1,0 +1,217 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Photo from '../components/Photo.astro';
+import Txt from '../components/Txt.astro';
+import { getEntry } from 'astro:content';
+import { SITE } from '../config';
+import { url, getReglages, estRenseigne } from '../lib/site';
+
+const apropos = (await getEntry('apropos', 'contenu'))!.data;
+const coaching = (await getEntry('coaching', 'contenu'))!.data;
+const r = await getReglages();
+
+// Aperçu GitHub Pages : le formulaire Netlify ne peut pas y fonctionner
+const apercu = Boolean(import.meta.env.PUBLIC_APERCU);
+
+const rubriques = [
+  { cle: 'rapport_au_sport', titre: 'Le sport et moi' },
+  { cle: 'parcours', titre: 'Parcours' },
+  { cle: 'pourquoi_coach', titre: 'Pourquoi coach ?' },
+  { cle: 'vision', titre: 'Vision du coaching' },
+] as const;
+
+const carte = [
+  { icon: 'instagram', label: 'Instagram', value: r.instagram, href: r.instagram, externe: true },
+  { icon: 'mail', label: 'E-mail', value: r.email, href: `mailto:${r.email}`, externe: false },
+  { icon: 'telephone', label: 'Téléphone', value: r.telephone, href: `tel:${r.telephone.replace(/\s/g, '')}`, externe: false },
+] as const;
+
+const niveaux = [
+  'Je débute ou je reprends le sport',
+  'Je pratique de temps en temps',
+  'Je pratique régulièrement',
+  'Je prépare des compétitions',
+];
+
+const champ =
+  'mt-1.5 w-full rounded-xl border border-brand-ink/15 bg-white px-4 py-3 text-base outline-none focus:border-brand-violet sm:text-sm';
+---
+
+<Base
+  title="À propos / Contact"
+  description="Elo et Guillaume, les coachs d'EndurAll. Deux parcours, une même vision du coaching. Contacte-nous pour parler de ton objectif."
+>
+  <!-- 1. ELO & GUIGUI -->
+  <section class="bg-brand-gradient-soft">
+    <div class="container-px grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
+      <div data-reveal>
+        <p class="eyebrow">Elo & Guigui</p>
+        <h1 class="mt-3 text-4xl font-extrabold sm:text-5xl"><Txt value={apropos.duo.titre} /></h1>
+        <p class="mt-5 max-w-lg text-lg text-brand-ink/70"><Txt value={apropos.duo.texte} /></p>
+        <a href="#contact" class="btn-primary mt-8">On parle de ton objectif&nbsp;?</a>
+      </div>
+      <div data-reveal>
+        <Photo src={apropos.duo.photo} alt="Elo et Guillaume, coachs EndurAll" label="Vraie photo d'Elo et Guillaume ensemble" class="aspect-[4/3]" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 & 3. GUILLAUME, ELO -->
+  {apropos.coachs.map((c, i) => (
+    <section class="container-px py-16 md:py-24">
+      <div class:list={['grid items-start gap-10', i % 2 === 1 ? 'md:grid-cols-[1.2fr_0.8fr]' : 'md:grid-cols-[0.8fr_1.2fr]']}>
+        <div class:list={['md:sticky md:top-24', i % 2 === 1 && 'md:order-2']} data-reveal>
+          <Photo src={c.photo} alt={c.prenom} label={`Photo de ${c.prenom}`} />
+        </div>
+        <div data-reveal>
+          <p class="eyebrow">Coach EndurAll</p>
+          <h2 class="mt-2 text-4xl font-extrabold"><span class="gradient-text">{c.prenom}</span></h2>
+          <p class="mt-3 text-xl font-semibold"><Txt value={c.accroche} /></p>
+
+          <div class="mt-8 space-y-6">
+            {rubriques.map((rb) => (
+              <div>
+                <h3 class="text-sm font-semibold uppercase tracking-widest text-brand-ink/50">{rb.titre}</h3>
+                <p class="mt-2 text-brand-ink/80"><Txt value={c[rb.cle]} /></p>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-8 grid gap-5 sm:grid-cols-2">
+            <div class="card">
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-brand-ink/50">Spécialités</h3>
+              <ul class="mt-3 flex flex-wrap gap-2">
+                {c.specialites.map((s) => <li class="rounded-full bg-brand-gradient-soft px-3 py-1.5 text-sm font-medium"><Txt value={s} /></li>)}
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-brand-ink/50">Diplômes & qualifications</h3>
+              <ul class="mt-3 space-y-2 text-sm">
+                {c.diplomes.map((d) => (
+                  <li class="flex gap-2"><Icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-violet" /><Txt value={d} /></li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CONTACT -->
+  <section id="contact" class="scroll-mt-16 bg-brand-gradient-soft py-16 md:py-24">
+    <div class="container-px">
+      <div class="mx-auto max-w-2xl text-center" data-reveal>
+        <p class="eyebrow">Contact</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-5xl">On parle de ton objectif&nbsp;?</h2>
+        <p class="mt-4 text-brand-ink/70"><Txt value={apropos.contact_intro} /></p>
+      </div>
+
+      <div class="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <!-- Carte de visite -->
+        <aside class="h-fit rounded-3xl bg-brand-gradient p-8 text-white shadow-xl" data-reveal>
+          <div class="flex items-center gap-3">
+            <img src={url('/images/logo-endurall-detoure.png')} alt="" width="56" height="56" class="h-14 w-14" />
+            <div>
+              <p class="font-display text-xl font-extrabold">{SITE.name}</p>
+              <p class="text-sm text-white/80">Elo & Guillaume</p>
+            </div>
+          </div>
+          <p class="mt-5 text-sm text-white/80">Course à pied · Triathlon · Préparation physique</p>
+          <ul class="mt-6 space-y-4">
+            {carte.map((c) => (
+              <li class="flex items-center gap-3">
+                <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
+                  <Icon name={c.icon} class="h-5 w-5" />
+                </span>
+                <span class="min-w-0">
+                  <span class="block text-xs uppercase tracking-widest text-white/60">{c.label}</span>
+                  {estRenseigne(c.value) ? (
+                    <a href={c.href} target={c.externe ? '_blank' : undefined} rel="noopener" class="block break-all font-semibold hover:underline">
+                      {c.externe ? 'Nous suivre' : c.value}
+                    </a>
+                  ) : (
+                    <span class="a-completer font-semibold">[À COMPLÉTER]</span>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </aside>
+
+        <!-- Formulaire (Netlify Forms) -->
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action={url('/merci')}
+          class="card space-y-5 p-6 md:p-8"
+          data-reveal
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden">
+            <label>Ne pas remplir : <input name="bot-field" /></label>
+          </p>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="block text-sm font-medium">
+              Prénom
+              <input type="text" name="prenom" autocomplete="given-name" required class={champ} />
+            </label>
+            <label class="block text-sm font-medium">
+              Nom
+              <input type="text" name="nom" autocomplete="family-name" required class={champ} />
+            </label>
+            <label class="block text-sm font-medium">
+              E-mail
+              <input type="email" name="email" autocomplete="email" required class={champ} />
+            </label>
+            <label class="block text-sm font-medium">
+              Téléphone <span class="font-normal text-brand-ink/50">(facultatif)</span>
+              <input type="tel" name="telephone" autocomplete="tel" class={champ} />
+            </label>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="block text-sm font-medium">
+              Discipline recherchée
+              <select name="discipline" required class={champ}>
+                {coaching.disciplines.map((d) => <option>{d.titre}</option>)}
+                <option>Je ne sais pas encore</option>
+              </select>
+            </label>
+            <label class="block text-sm font-medium">
+              Ton niveau actuel
+              <select name="niveau" required class={champ}>
+                {niveaux.map((n) => <option>{n}</option>)}
+              </select>
+            </label>
+          </div>
+
+          <label class="block text-sm font-medium">
+            Ton objectif
+            <input type="text" name="objectif" required class={champ} placeholder="Ex. courir 30 minutes sans m'arrêter, finir mon premier triathlon…" />
+          </label>
+
+          <label class="block text-sm font-medium">
+            Ton message
+            <textarea name="message" rows="5" class={champ} placeholder="Ton quotidien, tes disponibilités, tes contraintes… tout ce qui peut nous aider."></textarea>
+          </label>
+
+          {apercu && (
+            <p class="rounded-xl bg-brand-orange/10 p-3 text-sm text-brand-ink/70">
+              Aperçu : l'envoi du formulaire sera actif une fois le site en ligne sur Netlify.
+            </p>
+          )}
+          <button type="submit" class="btn-primary w-full py-4 text-base sm:w-auto" disabled={apercu}>Envoyer ma demande</button>
+          <p class="text-xs text-brand-ink/50">
+            En envoyant ce formulaire, tu acceptes que tes données soient utilisées pour te recontacter.
+            Voir la <a href={url('/confidentialite')} class="underline">politique de confidentialité</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>

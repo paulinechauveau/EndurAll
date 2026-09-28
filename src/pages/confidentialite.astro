@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import { getReglages, estRenseigne } from '../lib/site';
+
+const r = await getReglages();
+---
+
+<Base title="Politique de confidentialité">
+  <section class="container-px py-16 md:py-20">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-3xl font-extrabold sm:text-4xl">Politique de confidentialité</h1>
+      <div class="prose mt-8 max-w-none text-brand-ink/80">
+        <p class="text-sm text-brand-ink/50">Modèle à faire relire avant la mise en ligne.</p>
+
+        <h2>Données collectées</h2>
+        <p>
+          Via le formulaire de contact, nous collectons tes prénom et nom, ton adresse e-mail, ton
+          numéro de téléphone (facultatif), la discipline recherchée, ton objectif, ton niveau actuel
+          et le contenu de ton message. Ces données sont utilisées uniquement pour répondre à ta demande et,
+          le cas échéant, organiser ton coaching.
+        </p>
+
+        <h2>Base légale & conservation</h2>
+        <p>
+          Le traitement repose sur ton consentement. Tes données sont conservées le temps nécessaire
+          au traitement de ta demande, puis supprimées si aucune relation n’est engagée.
+        </p>
+
+        <h2>Hébergement du formulaire</h2>
+        <p>
+          Les envois du formulaire sont traités par Netlify Forms. Aucune donnée n’est revendue à des tiers.
+        </p>
+
+        <h2>Vos droits</h2>
+        <p>
+          Conformément au RGPD, tu disposes d’un droit d’accès, de rectification et de suppression de
+          tes données. Pour l’exercer, écris-nous à{' '}
+          {estRenseigne(r.email) ? <a href={`mailto:${r.email}`}>{r.email}</a> : <span>{r.email}</span>}.
+        </p>
+
+        <h2>Cookies</h2>
+        <p>
+          Ce site n’utilise pas de cookies de suivi publicitaire. Seuls des cookies techniques
+          strictement nécessaires peuvent être déposés.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

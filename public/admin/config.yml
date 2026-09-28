@@ -1,0 +1,126 @@
+# Configuration Decap CMS — édition du contenu sans code.
+# Backend : GitHub. On se connecte avec son compte GitHub (accès en écriture au dépôt requis).
+# L'authentification passe par le fournisseur OAuth de Netlify (voir README).
+# Pour tester en local : ajouter `local_backend: true` ici et lancer `npx decap-server`.
+
+backend:
+  name: github
+  repo: paulinechauveau/EndurAll
+  branch: main
+
+# Dossier où Decap dépose les images téléversées depuis l'admin
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+locale: "fr"
+
+collections:
+  # ─── Pages du site ─────────────────────────────────────────────
+  # Remplacer chaque « [À COMPLÉTER] » par le vrai contenu.
+  - name: "pages"
+    label: "Pages du site"
+    files:
+      - name: "accueil"
+        label: "Accueil"
+        file: "src/content/accueil/contenu.yml"
+        fields:
+          - label: "Hero (haut de page)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Accroche", name: "accroche", widget: "string" }
+              - { label: "Courte présentation", name: "presentation", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Description de la photo", name: "photo_alt", widget: "string", required: false }
+          - label: "Philosophie"
+            name: "philosophie"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - label: "Piliers"
+                name: "piliers"
+                widget: "list"
+                fields:
+                  - { label: "Titre", name: "titre", widget: "string" }
+                  - { label: "Texte", name: "texte", widget: "text" }
+          - { label: "Intro de la section Offres", name: "offres_intro", widget: "string" }
+          - label: "Comment ça marche (étapes)"
+            name: "etapes"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Texte", name: "texte", widget: "text" }
+          - label: "Bloc final"
+            name: "cta_final"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Texte", name: "texte", widget: "text" }
+
+      - name: "coaching"
+        label: "Coaching (disciplines & formules)"
+        file: "src/content/coaching/contenu.yml"
+        fields:
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - label: "Disciplines"
+            name: "disciplines"
+            widget: "list"
+            allow_add: false
+            fields:
+              - { label: "Identifiant (ne pas modifier)", name: "id", widget: "string" }
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Résumé (affiché sur l'accueil)", name: "resume", widget: "text" }
+              - { label: "Exemples de besoins", name: "exemples", widget: "list", field: { label: "Exemple", name: "exemple", widget: "string" } }
+              - { label: "Ce qu'EndurAll apporte concrètement", name: "apport", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+          - label: "Formules"
+            name: "formules"
+            widget: "list"
+            fields:
+              - { label: "Nom", name: "nom", widget: "string" }
+              - { label: "Accroche (affichée sur l'accueil, sans prix)", name: "accroche", widget: "string" }
+              - { label: "Prix (page Coaching uniquement, vide = masqué)", name: "prix", widget: "string", required: false }
+              - { label: "Mettre en avant", name: "mise_en_avant", widget: "boolean", default: false }
+              - { label: "À qui elle s'adresse", name: "pour_qui", widget: "text" }
+              - { label: "Ce qui est inclus", name: "inclus", widget: "list", field: { label: "Prestation", name: "prestation", widget: "string" } }
+              - { label: "Comment ça fonctionne", name: "fonctionnement", widget: "text" }
+
+      - name: "apropos"
+        label: "À propos / Contact"
+        file: "src/content/apropos/contenu.yml"
+        fields:
+          - label: "Elo & Guigui"
+            name: "duo"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Texte", name: "texte", widget: "text" }
+              - { label: "Photo du duo", name: "photo", widget: "image", required: false }
+          - label: "Coachs"
+            name: "coachs"
+            widget: "list"
+            fields:
+              - { label: "Prénom", name: "prenom", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Accroche", name: "accroche", widget: "string" }
+              - { label: "Rapport au sport", name: "rapport_au_sport", widget: "text" }
+              - { label: "Parcours", name: "parcours", widget: "text" }
+              - { label: "Pourquoi coach ?", name: "pourquoi_coach", widget: "text" }
+              - { label: "Vision du coaching", name: "vision", widget: "text" }
+              - { label: "Spécialités", name: "specialites", widget: "list", field: { label: "Spécialité", name: "specialite", widget: "string" } }
+              - { label: "Diplômes & qualifications", name: "diplomes", widget: "list", field: { label: "Diplôme", name: "diplome", widget: "string" } }
+          - { label: "Intro du formulaire de contact", name: "contact_intro", widget: "text" }
+
+      - name: "reglages"
+        label: "Réglages (coordonnées & légal)"
+        file: "src/content/reglages/general.yml"
+        fields:
+          - { label: "E-mail", name: "email", widget: "string" }
+          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - { label: "Instagram (lien complet)", name: "instagram", widget: "string" }
+          - { label: "Raison sociale", name: "raison_sociale", widget: "string" }
+          - { label: "Statut juridique", name: "statut", widget: "string" }
+          - { label: "SIRET", name: "siret", widget: "string" }
+          - { label: "Adresse", name: "adresse", widget: "string" }
+          - { label: "Directeur de la publication", name: "directeur_publication", widget: "string" }
+          - { label: "CGV (lien ou PDF, vide = masqué)", name: "cgv", widget: "file", required: false }

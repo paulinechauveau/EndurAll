@@ -1,0 +1,15 @@
+---
+// Texte issu du contenu éditable : les « [À COMPLÉTER] » sont surlignés
+// pour être repérés facilement dans l'aperçu.
+import { aCompleter } from '../lib/site';
+
+interface Props {
+  value?: string;
+}
+
+const { value = '' } = Astro.props;
+// Typographie française : espace insécable avant ? ! : ;
+const texte = value.replace(/ ([?!:;»])/g, ' $1').replace(/« /g, '« ');
+---
+
+<span class:list={[aCompleter(value) && 'a-completer']}>{texte}</span>

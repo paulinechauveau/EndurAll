@@ -1,0 +1,27 @@
+hero:
+  accroche: "Ton coaching sportif, construit autour de toi."
+  presentation: "Course à pied, triathlon ou préparation physique : que tu débutes, que tu reprennes ou que tu vises un objectif d'endurance, on construit ensemble l'accompagnement qui te correspond."
+  photo: ""
+  photo_alt: "Elo et Guillaume, coachs EndurAll"
+philosophie:
+  titre: "Un coaching qui part de toi."
+  piliers:
+    - titre: "Un coaching personnalisable"
+      texte: "Ton entraînement doit s'adapter à ton niveau, tes objectifs et ton quotidien."
+    - titre: "Bien plus que des sports d'endurance"
+      texte: "Running, triathlon, préparation physique, renforcement ou remise en forme : l'objectif est de construire un sportif plus complet."
+    - titre: "On part de toi et on construit ensemble"
+      texte: "Pas de programme générique appliqué à tout le monde. On échange, on construit, on analyse et on adapte."
+offres_intro: "Deux formules pour t'accompagner, selon le suivi dont tu as besoin."
+etapes:
+  - titre: "Prise de contact"
+    texte: "Tu nous contactes via Instagram, par e-mail ou depuis le site."
+  - titre: "Formulaire"
+    texte: "Tu complètes un formulaire pour qu'on comprenne ton profil, ta pratique et ton objectif."
+  - titre: "Échange"
+    texte: "Un appel pour faire connaissance, préciser ton besoin et choisir l'accompagnement adapté."
+  - titre: "On commence l'aventure"
+    texte: "On met en place ton coaching et c'est parti."
+cta_final:
+  titre: "On parle de ton objectif ?"
+  texte: "Peu importe ton niveau ou ton point de départ. Dis-nous où tu veux aller et construisons la suite ensemble."

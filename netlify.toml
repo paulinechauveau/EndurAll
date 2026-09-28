@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Astro 4 fonctionne sur Node 18.20.8+ ; on fixe une version récente sur Netlify.
+  NODE_VERSION = "20"
+
+# Décommenter si on ajoute Decap CMS avec Identity/Git Gateway plus tard.
+# [[redirects]]
+#   from = "/admin/*"
+#   to = "/admin/index.html"
+#   status = 200

@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Photo from '../components/Photo.astro';
+import Txt from '../components/Txt.astro';
+import { getEntry } from 'astro:content';
+import { url } from '../lib/site';
+
+const coaching = (await getEntry('coaching', 'contenu'))!.data;
+---
+
+<Base
+  title="Coaching"
+  description="Course à pied, triathlon, préparation physique : découvre les accompagnements EndurAll et les formules Start et Premium."
+>
+  <section class="bg-brand-gradient-soft">
+    <div class="container-px py-16 text-center md:py-24">
+      <p class="eyebrow" data-reveal>Coaching</p>
+      <h1 class="mx-auto mt-3 max-w-3xl text-4xl font-extrabold sm:text-5xl" data-reveal>
+        Concrètement, qu'est-ce qu'EndurAll peut faire pour toi&nbsp;?
+      </h1>
+      <p class="mx-auto mt-4 max-w-xl text-brand-ink/70" data-reveal><Txt value={coaching.intro} /></p>
+      <div class="mt-8 flex flex-wrap justify-center gap-2" data-reveal>
+        <span class="rounded-full bg-white px-4 py-2 text-sm font-semibold shadow-sm">1. Ton objectif</span>
+        <span class="rounded-full bg-white px-4 py-2 text-sm font-semibold shadow-sm">2. Ta formule</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. CE QUE JE VEUX TRAVAILLER -->
+  <section class="container-px py-16 md:py-24">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <p class="eyebrow">Étape 1</p>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Ce que tu veux travailler</h2>
+    </div>
+
+    <div class="mt-12 space-y-8">
+      {coaching.disciplines.map((d, i) => (
+        <article id={d.id} class="scroll-mt-24 grid items-center gap-8 rounded-3xl border border-brand-ink/10 p-6 md:grid-cols-2 md:p-10" data-reveal>
+          <div class:list={[i % 2 === 1 && 'md:order-2']}>
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-gradient text-white">
+                <Icon name={d.id as 'course' | 'triathlon' | 'prepa'} />
+              </span>
+              <h3 class="text-2xl font-extrabold">{d.titre}</h3>
+            </div>
+            <p class="mt-4 text-brand-ink/70"><Txt value={d.resume} /></p>
+
+            <p class="mt-6 text-sm font-semibold uppercase tracking-widest text-brand-ink/50">Par exemple</p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              {d.exemples.map((e) => (
+                <li class="rounded-full bg-brand-gradient-soft px-3 py-1.5 text-sm font-medium"><Txt value={e} /></li>
+              ))}
+            </ul>
+
+            <p class="mt-6 text-sm font-semibold uppercase tracking-widest text-brand-ink/50">Ce qu'on t'apporte</p>
+            <p class="mt-2 text-brand-ink/80"><Txt value={d.apport} /></p>
+          </div>
+          <Photo src={d.photo} alt={d.titre} label={`Photo ${d.titre.toLowerCase()} avec un sportif accompagné`} class="aspect-[4/3]" />
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- 2. LA FORMULE -->
+  <section id="formules" class="scroll-mt-16 bg-brand-gradient-soft py-16 md:py-24">
+    <div class="container-px">
+      <div class="mx-auto max-w-2xl text-center" data-reveal>
+        <p class="eyebrow">Étape 2</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">La formule qui te correspond</h2>
+      </div>
+
+      <div class="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
+        {coaching.formules.map((f) => {
+          const hl = f.mise_en_avant;
+          const sub = hl ? 'text-white/70' : 'text-brand-ink/50';
+          const body = hl ? 'text-white/90' : 'text-brand-ink/80';
+          return (
+            <article
+              class:list={[
+                'flex flex-col rounded-3xl p-8',
+                hl ? 'bg-brand-gradient text-white shadow-xl' : 'border border-brand-ink/10 bg-white',
+              ]}
+              data-reveal
+            >
+              <h3 class="text-2xl font-extrabold">{f.nom}</h3>
+              <p class:list={['mt-2', body]}><Txt value={f.accroche} /></p>
+              {f.prix && (
+                <p class="mt-5 font-display text-3xl font-extrabold"><Txt value={f.prix} /></p>
+              )}
+
+              <h4 class:list={['mt-7 text-xs font-semibold uppercase tracking-widest', sub]}>À qui elle s'adresse</h4>
+              <p class:list={['mt-2 text-sm', body]}><Txt value={f.pour_qui} /></p>
+
+              <h4 class:list={['mt-6 text-xs font-semibold uppercase tracking-widest', sub]}>Ce qui est inclus</h4>
+              <ul class="mt-3 space-y-2.5 text-sm">
+                {f.inclus.map((item) => (
+                  <li class="flex gap-2">
+                    <Icon name="check" class={`mt-0.5 h-4 w-4 shrink-0 ${hl ? 'text-white' : 'text-brand-violet'}`} />
+                    <span class={body}><Txt value={item} /></span>
+                  </li>
+                ))}
+              </ul>
+
+              <h4 class:list={['mt-6 text-xs font-semibold uppercase tracking-widest', sub]}>Comment ça fonctionne</h4>
+              <p class:list={['mt-2 flex-1 text-sm', body]}><Txt value={f.fonctionnement} /></p>
+
+              <a
+                href={url('/a-propos#contact')}
+                class:list={['btn mt-8 py-3.5', hl ? 'bg-white text-brand-ink hover:bg-white/90' : 'btn-primary']}
+              >
+                Je démarre mon coaching
+              </a>
+            </article>
+          );
+        })}
+      </div>
+
+      <p class="mx-auto mt-8 max-w-xl text-center text-sm text-brand-ink/60" data-reveal>
+        Tu hésites entre les deux&nbsp;? C'est normal&nbsp;: on en parle ensemble lors du premier échange.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-px pt-16 text-center md:pt-24" data-reveal>
+    <h2 class="text-3xl font-extrabold sm:text-4xl">On parle de ton objectif&nbsp;?</h2>
+    <a href={url('/a-propos#contact')} class="btn-primary mt-6 px-8 py-4 text-base">Prendre contact</a>
+  </section>
+</Base>

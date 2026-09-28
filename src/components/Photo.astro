@@ -1,0 +1,26 @@
+---
+// Affiche une vraie photo si elle est renseignée,
+// sinon un emplacement réservé « [À COMPLÉTER] » aux couleurs EndurAll.
+import Icon from './Icon.astro';
+import { url, estRenseigne } from '../lib/site';
+
+interface Props {
+  src?: string;
+  alt: string;
+  label: string; // description de la photo attendue
+  class?: string; // taille / ratio, ex. "aspect-[4/5]"
+}
+
+const { src, alt, label, class: className = 'aspect-[4/5]' } = Astro.props;
+---
+
+{estRenseigne(src) ? (
+  <img src={url(src)} alt={alt} loading="lazy" class:list={['w-full rounded-3xl object-cover', className]} />
+) : (
+  <div class:list={['rounded-3xl bg-brand-gradient p-1', className]}>
+    <div class="flex h-full w-full flex-col items-center justify-center gap-3 rounded-[1.3rem] bg-white/95 p-6 text-center text-sm text-brand-ink/50">
+      <Icon name="photo" class="h-8 w-8 text-brand-violet/60" />
+      <span><span class="a-completer">[À COMPLÉTER]</span><br />{label}</span>
+    </div>
+  </div>
+)}

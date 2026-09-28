@@ -1,0 +1,28 @@
+duo:
+  titre: "Deux parcours. Une même vision du coaching."
+  texte: "[À COMPLÉTER] Quelques lignes pour présenter EndurAll comme un projet humain porté par Elo et Guillaume."
+  photo: ""
+coachs:
+  - prenom: "Guillaume"
+    photo: ""
+    accroche: "[À COMPLÉTER]"
+    rapport_au_sport: "[À COMPLÉTER] Son rapport au sport."
+    parcours: "[À COMPLÉTER] Son parcours."
+    pourquoi_coach: "[À COMPLÉTER] Pourquoi il est devenu coach."
+    vision: "[À COMPLÉTER] Sa vision du coaching."
+    specialites:
+      - "[À COMPLÉTER]"
+    diplomes:
+      - "[À COMPLÉTER]"
+  - prenom: "Elo"
+    photo: ""
+    accroche: "[À COMPLÉTER]"
+    rapport_au_sport: "[À COMPLÉTER] Sa relation au sport."
+    parcours: "[À COMPLÉTER] Son parcours."
+    pourquoi_coach: "[À COMPLÉTER] Sa motivation à devenir coach."
+    vision: "[À COMPLÉTER] Sa vision du coaching."
+    specialites:
+      - "[À COMPLÉTER]"
+    diplomes:
+      - "[À COMPLÉTER]"
+contact_intro: "Un message, et on s'occupe du reste. Dis-nous où tu en es et où tu veux aller : on te recontacte pour en parler."

@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Photo from '../components/Photo.astro';
+import Txt from '../components/Txt.astro';
+import { getEntry } from 'astro:content';
+import { CTA } from '../config';
+import { url } from '../lib/site';
+
+const accueil = (await getEntry('accueil', 'contenu'))!.data;
+const coaching = (await getEntry('coaching', 'contenu'))!.data;
+
+const piliersIcones = ['reglages', 'couches', 'ensemble'] as const;
+
+---
+
+<Base>
+  <!-- 1. HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-brand-gradient-soft"></div>
+    <div class="container-px relative grid items-center gap-10 py-14 md:grid-cols-2 md:py-24">
+      <div data-reveal>
+        <img src={url('/images/logo-endurall-detoure.png')} alt="EndurAll" width="96" height="96" class="h-20 w-20 md:h-24 md:w-24" />
+        <p class="eyebrow mt-6">Coaching sportif personnalisé</p>
+        <h1 class="mt-3 text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
+          <Txt value={accueil.hero.accroche} />
+        </h1>
+        <p class="mt-5 max-w-lg text-lg text-brand-ink/70"><Txt value={accueil.hero.presentation} /></p>
+
+        <ul class="mt-6 flex flex-wrap gap-2">
+          {coaching.disciplines.map((d) => (
+            <li>
+              <a href={url(`/coaching#${d.id}`)} class="inline-flex items-center gap-2 rounded-full border border-brand-ink/10 bg-white px-4 py-2 text-sm font-semibold shadow-sm hover:border-brand-violet/40">
+                <Icon name={d.id as 'course' | 'triathlon' | 'prepa'} class="h-4 w-4 text-brand-violet" />
+                {d.titre}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-8">
+          <a href={url(CTA.href)} class="btn-primary w-full px-8 py-4 text-base sm:w-auto">{CTA.label}</a>
+        </div>
+      </div>
+
+      <div class="relative" data-reveal>
+        <div class="absolute -inset-6 rounded-full bg-brand-gradient opacity-20 blur-3xl"></div>
+        <div class="relative mx-auto max-w-md">
+          <Photo src={accueil.hero.photo} alt={accueil.hero.photo_alt ?? ''} label="Photo forte d'Elo et Guillaume en coaching" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PHILOSOPHIE -->
+  <section class="container-px py-16 md:py-24">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <p class="eyebrow">La philosophie EndurAll</p>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl"><Txt value={accueil.philosophie.titre} /></h2>
+    </div>
+    <div class="mt-12 grid gap-5 md:grid-cols-3">
+      {accueil.philosophie.piliers.map((p, i) => (
+        <article class="card" data-reveal>
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-gradient text-white">
+            <Icon name={piliersIcones[i % piliersIcones.length]} />
+          </span>
+          <h3 class="mt-5 text-lg font-bold"><Txt value={p.titre} /></h3>
+          <p class="mt-2 text-sm text-brand-ink/70"><Txt value={p.texte} /></p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- 3. SERVICES -->
+  <section class="bg-brand-gradient-soft py-16 md:py-24">
+    <div class="container-px">
+      <div class="mx-auto max-w-2xl text-center" data-reveal>
+        <p class="eyebrow">Nos coachings</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Ce qu'on peut travailler ensemble</h2>
+      </div>
+      <div class="mt-12 grid gap-5 md:grid-cols-3">
+        {coaching.disciplines.map((d) => (
+          <a href={url(`/coaching#${d.id}`)} class="card group flex flex-col" data-reveal>
+            <Icon name={d.id as 'course' | 'triathlon' | 'prepa'} class="h-8 w-8 text-brand-violet" />
+            <h3 class="mt-4 text-xl font-bold">{d.titre}</h3>
+            <p class="mt-2 flex-1 text-sm text-brand-ink/70"><Txt value={d.resume} /></p>
+            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-violet">
+              En savoir plus <Icon name="fleche" class="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. LES OFFRES (sans prix) -->
+  <section class="container-px py-16 md:py-24">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <p class="eyebrow">Les formules</p>
+      <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Start ou Premium&nbsp;?</h2>
+      <p class="mt-4 text-brand-ink/70"><Txt value={accueil.offres_intro} /></p>
+    </div>
+    <div class="mx-auto mt-12 grid max-w-4xl gap-5 md:grid-cols-2">
+      {coaching.formules.map((f) => (
+        <article
+          class:list={[
+            'rounded-3xl p-8',
+            f.mise_en_avant ? 'bg-brand-gradient text-white shadow-xl' : 'border border-brand-ink/10 bg-white',
+          ]}
+          data-reveal
+        >
+          <h3 class="text-2xl font-extrabold">{f.nom}</h3>
+          <p class:list={['mt-3', f.mise_en_avant ? 'text-white/90' : 'text-brand-ink/70']}><Txt value={f.accroche} /></p>
+        </article>
+      ))}
+    </div>
+    <div class="mt-10 text-center" data-reveal>
+      <a href={url('/coaching#formules')} class="btn-outline">Découvrir nos coachings</a>
+    </div>
+  </section>
+
+  <!-- 5. COMMENT ÇA MARCHE -->
+  <section class="bg-brand-gradient-soft py-16 md:py-24">
+    <div class="container-px">
+      <div class="mx-auto max-w-2xl text-center" data-reveal>
+        <p class="eyebrow">Comment ça marche&nbsp;?</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">{accueil.etapes.length} étapes pour te lancer</h2>
+      </div>
+      <ol class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {accueil.etapes.map((s, i) => (
+          <li class="card" data-reveal>
+            <span class="gradient-text font-display text-4xl font-extrabold">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="mt-3 text-lg font-bold"><Txt value={s.titre} /></h3>
+            <p class="mt-2 text-sm text-brand-ink/70"><Txt value={s.texte} /></p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 6. CTA FINAL -->
+  <section class="container-px pt-16 md:pt-24">
+    <div class="relative overflow-hidden rounded-3xl bg-brand-gradient px-6 py-14 text-center text-white md:py-20" data-reveal>
+      <h2 class="text-3xl font-extrabold sm:text-5xl"><Txt value={accueil.cta_final.titre} /></h2>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-white/90"><Txt value={accueil.cta_final.texte} /></p>
+      <a href={url('/a-propos#contact')} class="btn mt-8 w-full bg-white px-8 py-4 text-base text-brand-ink hover:bg-white/90 sm:w-auto">Prendre contact</a>
+    </div>
+  </section>
+</Base>
