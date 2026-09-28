@@ -78,7 +78,8 @@ collections:
             widget: "list"
             fields:
               - { label: "Nom", name: "nom", widget: "string" }
-              - { label: "Accroche (affichée sur l'accueil, sans prix)", name: "accroche", widget: "string" }
+              - { label: "Philosophie (phrase courte affichée sur l'accueil, sans prix)", name: "philosophie", widget: "string" }
+              - { label: "Accroche (page Coaching)", name: "accroche", widget: "string" }
               - { label: "Prix (page Coaching uniquement, vide = masqué)", name: "prix", widget: "string", required: false }
               - { label: "Mettre en avant", name: "mise_en_avant", widget: "boolean", default: false }
               - { label: "À qui elle s'adresse", name: "pour_qui", widget: "text" }

@@ -59,7 +59,8 @@ const coaching = defineCollection({
     formules: z.array(
       z.object({
         nom: z.string(),
-        accroche: z.string(), // philosophie de l'offre, affichée sur l'accueil
+        philosophie: z.string(), // phrase courte affichée sur l'accueil
+        accroche: z.string(), // présentation de l'offre sur la page Coaching
         prix: z.string().optional(),
         mise_en_avant: z.boolean().default(false),
         pour_qui: z.string(),

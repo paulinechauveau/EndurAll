@@ -41,6 +41,7 @@ disciplines:
     photo: ""
 formules:
   - nom: "EndurAll Start"
+    philosophie: "Idéal pour commencer le coaching personnalisé."
     accroche: "Une formule simple et accessible pour bénéficier des fondamentaux du coaching, idéale pour avancer à ton rythme et en autonomie."
     prix: "[À COMPLÉTER]"
     mise_en_avant: false
@@ -51,6 +52,7 @@ formules:
       - "Conseils sur la pratique sportive"
     fonctionnement: "Ton plan d'entraînement couvre 4 semaines et on le révise toutes les deux semaines. On fait le point ensemble lors d'un appel bi-mensuel. [À COMPLÉTER] Outil utilisé pour suivre ton plan."
   - nom: "EndurAll Premium"
+    philosophie: "Coaching 360° pour t'accompagner dans ton quotidien."
     accroche: "L'accompagnement le plus complet et personnalisable, pour bénéficier d'un suivi au plus près de tes objectifs."
     prix: "[À COMPLÉTER]"
     mise_en_avant: true
