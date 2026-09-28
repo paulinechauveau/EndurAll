@@ -143,7 +143,10 @@ const piliersIcones = ['reglages', 'couches', 'ensemble'] as const;
     <div class="relative overflow-hidden rounded-3xl bg-brand-gradient px-6 py-14 text-center text-white md:py-20" data-reveal>
       <h2 class="text-3xl font-extrabold sm:text-5xl"><Txt value={accueil.cta_final.titre} /></h2>
       <p class="mx-auto mt-4 max-w-xl text-lg text-white/90"><Txt value={accueil.cta_final.texte} /></p>
-      <a href={url('/a-propos#contact')} class="btn mt-8 w-full bg-white px-8 py-4 text-base text-brand-ink hover:bg-white/90 sm:w-auto">Prendre contact</a>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a href={url('/a-propos#contact')} class="btn w-full bg-white px-8 py-4 text-base text-brand-ink hover:bg-white/90 sm:w-auto">Prendre contact</a>
+        <a href={url('/a-propos')} class="btn w-full border border-white/50 px-8 py-4 text-base text-white hover:bg-white/10 sm:w-auto">Découvre Elo & Guillaume</a>
+      </div>
     </div>
   </section>
 </Base>

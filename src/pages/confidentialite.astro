@@ -1,8 +1,10 @@
 ---
+// Exception volontaire à la charte : cette page est rédigée au vouvoiement.
 import Base from '../layouts/Base.astro';
 import { getReglages, estRenseigne } from '../lib/site';
 
 const r = await getReglages();
+const apercu = Boolean(import.meta.env.PUBLIC_APERCU);
 ---
 
 <Base title="Politique de confidentialité">
@@ -10,20 +12,20 @@ const r = await getReglages();
     <div class="mx-auto max-w-3xl">
       <h1 class="text-3xl font-extrabold sm:text-4xl">Politique de confidentialité</h1>
       <div class="prose mt-8 max-w-none text-brand-ink/80">
-        <p class="text-sm text-brand-ink/50">Modèle à faire relire avant la mise en ligne.</p>
+        {apercu && <p class="text-sm text-brand-ink/50">Aperçu : modèle à faire relire avant la mise en ligne.</p>}
 
         <h2>Données collectées</h2>
         <p>
-          Via le formulaire de contact, nous collectons tes prénom et nom, ton adresse e-mail, ton
-          numéro de téléphone (facultatif), la discipline recherchée, ton objectif, ton niveau actuel
-          et le contenu de ton message. Ces données sont utilisées uniquement pour répondre à ta demande et,
-          le cas échéant, organiser ton coaching.
+          Via le formulaire de contact, nous collectons vos prénom et nom, votre adresse e-mail, votre
+          numéro de téléphone (facultatif), la discipline recherchée, votre objectif, votre niveau actuel
+          et le contenu de votre message. Ces données sont utilisées uniquement pour répondre à votre
+          demande et, le cas échéant, organiser votre coaching.
         </p>
 
         <h2>Base légale & conservation</h2>
         <p>
-          Le traitement repose sur ton consentement. Tes données sont conservées le temps nécessaire
-          au traitement de ta demande, puis supprimées si aucune relation n’est engagée.
+          Le traitement repose sur votre consentement. Vos données sont conservées le temps nécessaire
+          au traitement de votre demande, puis supprimées si aucune relation n’est engagée.
         </p>
 
         <h2>Hébergement du formulaire</h2>
@@ -33,8 +35,8 @@ const r = await getReglages();
 
         <h2>Vos droits</h2>
         <p>
-          Conformément au RGPD, tu disposes d’un droit d’accès, de rectification et de suppression de
-          tes données. Pour l’exercer, écris-nous à{' '}
+          Conformément au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression de
+          vos données. Pour l’exercer, écrivez-nous à{' '}
           {estRenseigne(r.email) ? <a href={`mailto:${r.email}`}>{r.email}</a> : <span>{r.email}</span>}.
         </p>
 

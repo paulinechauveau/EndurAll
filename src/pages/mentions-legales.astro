@@ -11,9 +11,11 @@ const r = await getReglages();
     <div class="mx-auto max-w-3xl">
       <h1 class="text-3xl font-extrabold sm:text-4xl">Mentions légales</h1>
       <div class="prose mt-8 max-w-none text-brand-ink/80">
-        <p class="text-sm text-brand-ink/50">
-          Les informations ci-dessous se modifient dans « Réglages » depuis l’administration du site.
-        </p>
+        {import.meta.env.PUBLIC_APERCU && (
+          <p class="text-sm text-brand-ink/50">
+            Aperçu : les informations ci-dessous se modifient dans « Réglages » depuis l’administration du site.
+          </p>
+        )}
 
         <h2>Éditeur du site</h2>
         <p>
