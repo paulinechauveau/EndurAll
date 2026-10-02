@@ -2,7 +2,7 @@
   "name": "endurall",
   "type": "module",
   "version": "0.1.0",
-  "description": "Site vitrine du coaching EndurAll (course à pied, triathlon, préparation physique)",
+  "description": "Site vitrine du coaching Endurall (course à pied, triathlon, préparation physique)",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

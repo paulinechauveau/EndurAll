@@ -43,6 +43,20 @@ collections:
                 fields:
                   - { label: "Titre", name: "titre", widget: "string" }
                   - { label: "Texte", name: "texte", widget: "text" }
+          - label: "Bandeau avis Google"
+            name: "avis_google"
+            widget: "object"
+            fields:
+              - { label: "Note moyenne (ex. 5,0)", name: "note", widget: "string" }
+              - { label: "Lien vers la fiche Google", name: "lien", widget: "string" }
+              - label: "Avis (recopiés depuis Google)"
+                name: "avis"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Auteur", name: "auteur", widget: "string" }
+                  - { label: "Note (1 à 5)", name: "note", widget: "number", value_type: "int", min: 1, max: 5, default: 5 }
+                  - { label: "Texte de l'avis", name: "texte", widget: "text" }
           - { label: "Intro de la section Offres", name: "offres_intro", widget: "string" }
           - label: "Comment ça marche (étapes)"
             name: "etapes"
@@ -71,7 +85,7 @@ collections:
               - { label: "Titre", name: "titre", widget: "string" }
               - { label: "Résumé (affiché sur l'accueil)", name: "resume", widget: "text" }
               - { label: "Exemples de besoins", name: "exemples", widget: "list", field: { label: "Exemple", name: "exemple", widget: "string" } }
-              - { label: "Ce qu'EndurAll apporte concrètement", name: "apport", widget: "text" }
+              - { label: "Ce qu'Endurall apporte concrètement", name: "apport", widget: "text" }
               - { label: "Photo", name: "photo", widget: "image", required: false }
           - label: "Formules"
             name: "formules"
@@ -95,7 +109,8 @@ collections:
             widget: "object"
             fields:
               - { label: "Titre", name: "titre", widget: "string" }
-              - { label: "Texte", name: "texte", widget: "text" }
+              - { label: "Accroche (sous-titre)", name: "accroche", widget: "string", required: false }
+              - { label: "Texte (ligne vide = nouveau paragraphe)", name: "texte", widget: "text" }
               - { label: "Photo du duo", name: "photo", widget: "image", required: false }
           - label: "Coachs"
             name: "coachs"
@@ -117,7 +132,13 @@ collections:
         file: "src/content/reglages/general.yml"
         fields:
           - { label: "E-mail", name: "email", widget: "string" }
-          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - label: "Téléphones"
+            name: "telephones"
+            widget: "list"
+            fields:
+              - { label: "Nom", name: "nom", widget: "string" }
+              - { label: "Numéro", name: "numero", widget: "string" }
+              - { label: "Photo (ronde, carte contact)", name: "photo", widget: "image", required: false }
           - { label: "Instagram (lien complet)", name: "instagram", widget: "string" }
           - { label: "Raison sociale", name: "raison_sociale", widget: "string" }
           - { label: "Statut juridique", name: "statut", widget: "string" }

@@ -25,7 +25,7 @@ const r = await getReglages();
           Adresse : <Txt value={r.adresse} /><br />
           SIRET : <Txt value={r.siret} /><br />
           E-mail : <Txt value={r.email} /><br />
-          Téléphone : <Txt value={r.telephone} />
+          Téléphone : {r.telephones.map((t, i) => <>{i > 0 && ' · '}{t.numero} ({t.nom})</>)}
         </p>
 
         <h2>Directeur de la publication</h2>

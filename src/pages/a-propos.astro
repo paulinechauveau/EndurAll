@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Photo from '../components/Photo.astro';
 import Txt from '../components/Txt.astro';
+import Paragraphes from '../components/Paragraphes.astro';
 import { getEntry } from 'astro:content';
 import { SITE } from '../config';
 import { url, getReglages, estRenseigne } from '../lib/site';
@@ -21,10 +22,11 @@ const rubriques = [
   { cle: 'vision', titre: 'Vision du coaching' },
 ] as const;
 
+const compteInstagram = r.instagram.replace(/\/+$/, '').split('/').pop();
+
 const carte = [
-  { icon: 'instagram', label: 'Instagram', value: r.instagram, href: r.instagram, externe: true },
-  { icon: 'mail', label: 'E-mail', value: r.email, href: `mailto:${r.email}`, externe: false },
-  { icon: 'telephone', label: 'Téléphone', value: r.telephone, href: `tel:${r.telephone.replace(/\s/g, '')}`, externe: false },
+  { icon: 'instagram', label: 'Instagram', value: r.instagram, texte: `@${compteInstagram}`, href: r.instagram, externe: true },
+  { icon: 'mail', label: 'E-mail', value: r.email, texte: r.email, href: `mailto:${r.email}`, externe: false },
 ] as const;
 
 const niveaux = [
@@ -40,7 +42,7 @@ const champ =
 
 <Base
   title="À propos / Contact"
-  description="Elo et Guillaume, les coachs d'EndurAll. Deux parcours, une même vision du coaching. Contacte-nous pour parler de ton objectif."
+  description="Elo et Guillaume, les coachs d'Endurall. Deux parcours, une même vision du coaching. Contacte-nous pour parler de ton objectif."
 >
   <!-- 1. ELO & GUIGUI -->
   <section class="bg-brand-gradient-soft">
@@ -48,11 +50,14 @@ const champ =
       <div data-reveal>
         <p class="eyebrow">Elo & Guigui</p>
         <h1 class="mt-3 text-4xl font-extrabold sm:text-5xl"><Txt value={apropos.duo.titre} /></h1>
-        <p class="mt-5 max-w-lg text-lg text-brand-ink/70"><Txt value={apropos.duo.texte} /></p>
+        {apropos.duo.accroche && (
+          <p class="gradient-text mt-6 font-display text-2xl font-extrabold"><Txt value={apropos.duo.accroche} /></p>
+        )}
+        <div class="mt-4 max-w-lg"><Paragraphes value={apropos.duo.texte} class="text-lg text-brand-ink/70" /></div>
         <a href="#contact" class="btn-primary mt-8">On parle de ton objectif&nbsp;?</a>
       </div>
       <div data-reveal>
-        <Photo src={apropos.duo.photo} alt="Elo et Guillaume, coachs EndurAll" label="Vraie photo d'Elo et Guillaume ensemble" class="aspect-[4/3]" />
+        <Photo src={apropos.duo.photo} alt="Elo et Guillaume, coachs Endurall" label="Vraie photo d'Elo et Guillaume ensemble" class="aspect-[4/3]" />
       </div>
     </div>
   </section>
@@ -65,7 +70,7 @@ const champ =
           <Photo src={c.photo} alt={c.prenom} label={`Photo de ${c.prenom}`} />
         </div>
         <div data-reveal>
-          <p class="eyebrow">Coach EndurAll</p>
+          <p class="eyebrow">Coach Endurall</p>
           <h2 class="mt-2 text-4xl font-extrabold"><span class="gradient-text">{c.prenom}</span></h2>
           <p class="mt-3 text-xl font-semibold"><Txt value={c.accroche} /></p>
 
@@ -73,7 +78,7 @@ const champ =
             {rubriques.map((rb) => (
               <div>
                 <h3 class="text-sm font-semibold uppercase tracking-widest text-brand-ink/50">{rb.titre}</h3>
-                <p class="mt-2 text-brand-ink/80"><Txt value={c[rb.cle]} /></p>
+                <div class="mt-2"><Paragraphes value={c[rb.cle]} class="text-brand-ink/80" /></div>
               </div>
             ))}
           </div>
@@ -129,11 +134,30 @@ const champ =
                   <span class="block text-xs uppercase tracking-widest text-white/60">{c.label}</span>
                   {estRenseigne(c.value) ? (
                     <a href={c.href} target={c.externe ? '_blank' : undefined} rel="noopener" class="block break-all font-semibold hover:underline">
-                      {c.externe ? 'Nous suivre' : c.value}
+                      {c.texte}
                     </a>
                   ) : (
                     <span class="a-completer font-semibold">[À COMPLÉTER]</span>
                   )}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Un numéro par coach -->
+          <ul class="mt-6 space-y-4 border-t border-white/20 pt-6">
+            {r.telephones.map((t) => (
+              <li class="flex items-center gap-3">
+                {t.photo ? (
+                  <img src={url(t.photo)} alt="" width="44" height="44" loading="lazy" class="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-white/40" />
+                ) : (
+                  <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
+                    <Icon name="telephone" class="h-5 w-5" />
+                  </span>
+                )}
+                <span class="min-w-0">
+                  <span class="block text-xs uppercase tracking-widest text-white/60">{t.nom}</span>
+                  <a href={`tel:${t.numero.replace(/[\s.]/g, '')}`} class="block font-semibold hover:underline">{t.numero}</a>
                 </span>
               </li>
             ))}

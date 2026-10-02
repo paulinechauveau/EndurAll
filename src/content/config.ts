@@ -10,7 +10,8 @@ const reglages = defineCollection({
   type: 'data',
   schema: z.object({
     email: z.string(),
-    telephone: z.string(),
+    // Un numéro par coach (affichés dans la carte contact, le pied de page et les mentions légales)
+    telephones: z.array(z.object({ nom: z.string(), numero: z.string(), photo: z.string().optional() })),
     instagram: z.string(),
     raison_sociale: z.string(),
     statut: z.string(),
@@ -35,6 +36,11 @@ const accueil = defineCollection({
       titre: z.string(),
       piliers: z.array(texte),
     }),
+    avis_google: z.object({
+      note: z.string(), // ex. « 5,0 », affichée en tête du bandeau
+      lien: z.string(), // URL de la fiche Google
+      avis: z.array(z.object({ auteur: z.string(), note: z.number().min(1).max(5).default(5), texte: z.string() })).default([]),
+    }),
     offres_intro: z.string(),
     etapes: z.array(texte),
     cta_final: texte,
@@ -52,7 +58,7 @@ const coaching = defineCollection({
         titre: z.string(),
         resume: z.string(), // texte court affiché sur l'accueil
         exemples: z.array(z.string()),
-        apport: z.string(), // ce qu'EndurAll apporte concrètement
+        apport: z.string(), // ce qu'Endurall apporte concrètement
         photo: z.string().optional(),
       })
     ),
@@ -77,7 +83,8 @@ const apropos = defineCollection({
   schema: z.object({
     duo: z.object({
       titre: z.string(),
-      texte: z.string(),
+      accroche: z.string().optional(), // sous-titre, ex. « Viens, on rêve ? »
+      texte: z.string(), // une ligne vide = nouveau paragraphe
       photo: z.string().optional(),
     }),
     coachs: z.array(

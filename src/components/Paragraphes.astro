@@ -1,0 +1,16 @@
+---
+// Texte long issu du contenu éditable : une ligne vide sépare deux paragraphes.
+import Txt from './Txt.astro';
+
+interface Props {
+  value?: string;
+  class?: string; // classes de chaque paragraphe
+}
+
+const { value = '', class: className } = Astro.props;
+const paragraphes = value.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+---
+
+{paragraphes.map((p, i) => (
+  <p class:list={[className, i > 0 && 'mt-3']}><Txt value={p} /></p>
+))}

@@ -1,4 +1,4 @@
-# EndurAll — Site vitrine du coaching
+# Endurall — Site vitrine du coaching
 
 Site web statique construit avec **Astro** + **Tailwind CSS**, conforme à la charte
 (`../Charte site internet.txt`). Rapide, pensé mobile d'abord, éditable sans code via **Decap CMS**.
@@ -74,7 +74,7 @@ Sur l'aperçu :
 1. Sur [netlify.com](https://www.netlify.com) : *Add new site* → *Import from Git* → sélectionner le dépôt.
    Build et dossier de publication sont déjà dans `netlify.toml`. Chaque push redéploie le site.
 2. **Formulaire de contact** : Netlify détecte automatiquement le formulaire. Les messages arrivent dans *Forms* ;
-   configurer une notification e-mail vers l'adresse EndurAll.
+   configurer une notification e-mail vers l'adresse Endurall.
 3. **Domaine** : acheter `endurall.fr`, puis *Domain settings* → *Add a domain* (HTTPS automatique).
    Si le domaine est différent, le remplacer dans `astro.config.mjs` et `public/robots.txt`.
 

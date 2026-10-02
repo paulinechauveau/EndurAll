@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Photo from '../components/Photo.astro';
 import Txt from '../components/Txt.astro';
+import Paragraphes from '../components/Paragraphes.astro';
 import { getEntry } from 'astro:content';
 import { url } from '../lib/site';
 
@@ -11,13 +12,13 @@ const coaching = (await getEntry('coaching', 'contenu'))!.data;
 
 <Base
   title="Coaching"
-  description="Course à pied, triathlon, préparation physique : découvre les accompagnements EndurAll et les formules Start et Premium."
+  description="Course à pied, triathlon, préparation physique : découvre les accompagnements Endurall et les formules Start et Premium."
 >
   <section class="bg-brand-gradient-soft">
     <div class="container-px py-16 text-center md:py-24">
       <p class="eyebrow" data-reveal>Coaching</p>
       <h1 class="mx-auto mt-3 max-w-3xl text-4xl font-extrabold sm:text-5xl" data-reveal>
-        Concrètement, qu'est-ce qu'EndurAll peut faire pour toi&nbsp;?
+        Concrètement, qu'est-ce qu'Endurall peut faire pour toi&nbsp;?
       </h1>
       <p class="mx-auto mt-4 max-w-xl text-brand-ink/70" data-reveal><Txt value={coaching.intro} /></p>
       <div class="mt-8 flex flex-wrap justify-center gap-2" data-reveal>
@@ -54,7 +55,7 @@ const coaching = (await getEntry('coaching', 'contenu'))!.data;
             </ul>
 
             <p class="mt-6 text-sm font-semibold uppercase tracking-widest text-brand-ink/50">Ce qu'on t'apporte</p>
-            <p class="mt-2 text-brand-ink/80"><Txt value={d.apport} /></p>
+            <div class="mt-2"><Paragraphes value={d.apport} class="text-brand-ink/80" /></div>
           </div>
           <Photo src={d.photo} alt={d.titre} label={`Photo ${d.titre.toLowerCase()} avec un sportif accompagné`} class="aspect-[4/3]" />
         </article>

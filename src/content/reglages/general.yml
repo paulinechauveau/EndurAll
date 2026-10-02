@@ -1,10 +1,16 @@
-# Coordonnées, liens et informations légales d'EndurAll.
+# Coordonnées, liens et informations légales d'Endurall.
 # Laisser « [À COMPLÉTER] » tant que l'information n'est pas connue :
 # les liens correspondants ne sont alors pas cliquables.
-email: "[À COMPLÉTER]"
-telephone: "[À COMPLÉTER]"
-instagram: "[À COMPLÉTER]"
-raison_sociale: "EndurAll"
+email: "endurall36@gmail.com"
+telephones:
+  - nom: "Elodie Pouget"
+    numero: "06 28 74 53 38"
+    photo: "/images/photos/elo-avatar.webp"
+  - nom: "Guillaume Chauveau"
+    numero: "06 72 76 73 65"
+    photo: "/images/photos/guillaume-avatar.webp"
+instagram: "https://www.instagram.com/endurall_coaching/"
+raison_sociale: "Endurall"
 statut: "[À COMPLÉTER] (ex. micro-entreprise)"
 siret: "[À COMPLÉTER]"
 adresse: "[À COMPLÉTER]"

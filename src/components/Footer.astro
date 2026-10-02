@@ -6,10 +6,17 @@ import { url, getReglages, estRenseigne, aCompleter } from '../lib/site';
 const r = await getReglages();
 const year = new Date().getFullYear();
 
+const compteInstagram = r.instagram.replace(/\/+$/, '').split('/').pop();
+
 const contacts = [
-  { icon: 'instagram', label: 'Instagram', value: r.instagram, href: r.instagram },
+  { icon: 'instagram', label: `@${compteInstagram}`, value: r.instagram, href: r.instagram },
   { icon: 'mail', label: r.email, value: r.email, href: `mailto:${r.email}` },
-  { icon: 'telephone', label: r.telephone, value: r.telephone, href: `tel:${r.telephone.replace(/\s/g, '')}` },
+  ...r.telephones.map((t) => ({
+    icon: 'telephone',
+    label: `${t.nom.split(' ')[0]} : ${t.numero}`,
+    value: t.numero,
+    href: `tel:${t.numero.replace(/[\s.]/g, '')}`,
+  })),
 ] as const;
 ---
 

@@ -1,8 +1,8 @@
 hero:
   accroche: "Ton coaching sportif, construit autour de toi."
   presentation: "Course à pied, triathlon ou préparation physique : que tu débutes, que tu reprennes ou que tu vises un objectif d'endurance, on construit ensemble l'accompagnement qui te correspond."
-  photo: ""
-  photo_alt: "Elo et Guillaume, coachs EndurAll"
+  photo: "/images/photos/elo-guillaume.webp"
+  photo_alt: "Elo et Guillaume, coachs Endurall"
 philosophie:
   titre: "Un coaching qui part de toi."
   piliers:
@@ -12,6 +12,12 @@ philosophie:
       texte: "Running, triathlon, préparation physique, renforcement ou remise en forme : l'objectif est de construire un sportif plus complet."
     - titre: "On part de toi et on construit ensemble"
       texte: "Pas de programme générique appliqué à tout le monde. On échange, on construit, on analyse et on adapte."
+# Bandeau d'avis Google (sous « Un coaching qui part de toi »).
+# Recopier ici les vrais avis de la fiche Google : rien ne doit être inventé.
+avis_google:
+  note: "[À COMPLÉTER]"
+  lien: "[À COMPLÉTER]"
+  avis: []
 offres_intro: "Deux formules pour t'accompagner, selon le suivi dont tu as besoin."
 etapes:
   - titre: "Prise de contact"

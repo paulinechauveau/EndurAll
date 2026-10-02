@@ -1,11 +1,11 @@
 // ───────────────────────────────────────────────────────────────────
-// Configuration centrale du site EndurAll (structure et SEO).
+// Configuration centrale du site Endurall (structure et SEO).
 // Les textes, coordonnées et infos légales sont dans src/content/
 // (éditables sans code depuis /admin).
 // ───────────────────────────────────────────────────────────────────
 
 export const SITE = {
-  name: 'EndurAll',
+  name: 'Endurall',
   tagline: 'Coaching sportif personnalisé : course à pied, triathlon & préparation physique',
   description:
     'Coaching sportif personnalisé en course à pied, triathlon et préparation physique. ' +
