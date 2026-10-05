@@ -18,9 +18,15 @@ philosophie:
       texte: Pas de programme générique appliqué à tout le monde. On échange, on
         construit, on analyse et on adapte.
 avis_google:
-  note: 5,0
+  note: "5"
   lien: https://maps.app.goo.gl/mgHn6ZpaNuiXCSxh8
-  avis: []
+  avis:
+    - note: 5
+      auteur: Léa
+      texte: Je sens vraiment qu'il y a un suivi derrière chaque séance. On voit ma
+        progression, on adapte quand il le faut, et surtout je sens que je
+        progresse vraiment. Et ça, ça change complétement ma façon de vivre la
+        prépa.
 offres_intro: Deux formules pour t'accompagner, selon le suivi dont tu as besoin.
 etapes:
   - titre: Prise de contact
