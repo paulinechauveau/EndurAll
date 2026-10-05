@@ -1,49 +1,111 @@
 duo:
-  titre: "Deux parcours et une même vision du coaching."
-  accroche: "Viens, on rêve ?"
-  texte: |-
+  titre: Deux parcours et une même vision du coaching.
+  accroche: Viens, on rêve ?
+  texte: >-
     Endurall est né comme beaucoup de nos idées un peu folles : pendant un run.
+
 
     Avec Elo, on a ce truc de rarement se dire non. Un Ironman ? Carrément. L'Ultra Marin ? Évidemment. Monter notre boîte ensemble ? Allez, on le fait !
 
+
     On aime les défis, les aventures et surtout cette sensation incroyable de se fixer un objectif, de tout donner pour l'atteindre et de pouvoir se dire : « je l'ai fait ».
 
+
     Alors Endurall, c'est exactement ça : vous accompagner dans vos propres aventures, de vos premières 30 minutes de course jusqu'au marathon, au triathlon ou à ce défi un peu fou qui vous trotte dans la tête.
+
 
     Nous, on rêve déjà au prochain défi. Et toi, c'est quoi le tien ?
   photo: ""
 coachs:
-  - prenom: "Guillaume"
-    photo: "/images/photos/guillaume.webp"
-    accroche: "« Parce que parfois il suffit que quelqu'un croie en nous pour accomplir ce que l'on pensait impossible. »"
-    rapport_au_sport: "Le sport a toujours occupé une place importante dans ma vie. Football, athlétisme, triathlon puis course à pied : j'ai grandi avec cette envie de bouger, de progresser et de me dépasser. Mais c'est surtout la course à pied qui a changé ma vie. En 2018, je me lance le défi de courir un marathon alors que mon mode de vie est bien loin de celui d'un sportif (tabac, alcool, 103 kg). Ce défi marque le début d'une transformation et me fait découvrir tout ce que le sport peut apporter, bien au-delà de la performance."
-    parcours: |-
-      Après plusieurs années d'athlétisme et une première expérience du triathlon plus jeune, je retrouve véritablement le sport à travers la course à pied en 2018. Depuis, les kilomètres et les défis se sont enchaînés : du 5 km au marathon, avec une recherche constante de progression, et une envie d'aller chercher plus loin encore (bientôt sur ultra endurance).
+  - accroche: « Parce que parfois il suffit que quelqu'un croit en nous pour
+      accomplir ce que l'on pensait impossible. »
+    rapport_au_sport: "Le sport a toujours occupé une place importante dans ma vie.
+      Football, athlétisme, triathlon puis course à pied : j'ai grandi avec
+      cette envie de bouger, de progresser et de me dépasser. Mais c'est surtout
+      la course à pied qui a changé ma vie. En 2018, je me lance le défi de
+      courir un marathon alors que mon mode de vie est bien loin de celui d'un
+      sportif (tabac, alcool, 103 kg). Ce défi marque le début d'une
+      transformation et me fait découvrir tout ce que le sport peut apporter,
+      bien au-delà de la performance."
+    vision: Pour moi, coacher ne consiste pas simplement à envoyer un programme
+      d'entraînement. C'est comprendre la personne derrière le sportif, son
+      quotidien, ses contraintes, ses doutes et ses ambitions. C'est expliquer,
+      écouter, ajuster, encourager et parfois savoir freiner. Je veux que chaque
+      personne que j'accompagne comprenne ce qu'elle fait, devienne
+      progressivement plus autonome et prenne confiance en ses capacités. Parce
+      qu'un objectif sportif peut sembler anodin sur le papier, mais peut
+      devenir quelque chose de beaucoup plus grand quand on décide de se lancer.
+    prenom: Guillaume
+    parcours: >-
+      Après plusieurs années d'athlétisme et une première expérience du
+      triathlon plus jeune, je retrouve véritablement le sport à travers la
+      course à pied en 2018. Depuis, les kilomètres et les défis se sont
+      enchaînés : du 5 km au marathon, avec une recherche constante de
+      progression, et une envie d'aller chercher plus loin encore (bientôt sur
+      ultra endurance).
+
 
       En parallèle, j'ai travaillé pendant près de 8 ans comme Business Analyst. Une première carrière qui m'a beaucoup appris, mais dans laquelle il me manquait quelque chose d'essentiel : du sens. J'ai alors choisi de changer de voie pour faire du sport et de l'accompagnement mon métier.
-    pourquoi_coach: "Parce que quelqu'un a cru en moi avant que j'y croie moi-même. Lorsque mon frère m'a proposé de courir un marathon, je ne pensais pas en être capable. Pourtant, ce simple défi a profondément changé ma vie. Aujourd'hui, j'ai envie d'être cette personne pour les autres : celle qui aide à croire en un objectif, à révéler un potentiel et à accomplir quelque chose qui paraissait parfois inaccessible. Devenir coach, c'est mettre ma passion du sport, mon empathie et mon envie d'aider les autres au service de cette mission."
-    vision: "Pour moi, coacher ne consiste pas simplement à envoyer un programme d'entraînement. C'est comprendre la personne derrière le sportif, son quotidien, ses contraintes, ses doutes et ses ambitions. C'est expliquer, écouter, ajuster, encourager et parfois savoir freiner. Je veux que chaque personne que j'accompagne comprenne ce qu'elle fait, devienne progressivement plus autonome et prenne confiance en ses capacités. Parce qu'un objectif sportif peut sembler anodin sur le papier, mais peut devenir quelque chose de beaucoup plus grand quand on décide de se lancer."
+    diplomes:
+      - CQP IF Double mention Musculation Personal Training et Cours Collectifs
+    photo: /images/photos/guillaume.webp
     specialites:
       - "[À COMPLÉTER]"
-    diplomes:
-      - "CQP IF Double mention Musculation Personal Training et Cours Collectifs"
-  - prenom: "Elo"
-    photo: "/images/photos/elo.webp"
-    accroche: "[À COMPLÉTER]"
-    rapport_au_sport: "Le sport d'endurance n'a pas été une évidence pour moi. J'ai commencé la course à pied avec l'envie d'arrêter la cigarette et de me sentir mieux dans ma peau, à une époque où mon quotidien était bien loin de celui d'une sportive. Et surtout, je n'ai pas aimé courir tout de suite. Même chose avec le vélo : de l'inconfort, de l'appréhension et franchement peu de plaisir au départ. Mais j'ai toujours aimé les challenges, particulièrement ceux qui me demandent de sortir de ma zone de confort. Petit à petit, j'ai persévéré, progressé et découvert ce dont j'étais capable. Aujourd'hui, l'endurance et le triathlon ont changé ma vie."
-    parcours: |-
-      Mon parcours sportif s'est construit progressivement. Après quelques années de course à pied sans véritable structure, une inscription un peu par hasard au T24 en 2021 m'a fait découvrir le triathlon, mais surtout l'ambiance des courses, l'adrénaline d'un dossard et le plaisir de relever des défis.
+    pourquoi_coach: "Parce que quelqu'un a cru en moi avant que j'y croie moi-même.
+      Lorsque mon frère m'a proposé de courir un marathon, je ne pensais pas en
+      être capable. Pourtant, ce simple défi a profondément changé ma vie.
+      Aujourd'hui, j'ai envie d'être cette personne pour les autres : celle qui
+      aide à croire en un objectif, à révéler un potentiel et à accomplir
+      quelque chose qui paraissait parfois inaccessible. Devenir coach, c'est
+      mettre ma passion du sport, mon empathie et mon envie d'aider les autres
+      au service de cette mission."
+  - accroche: "[À COMPLÉTER]"
+    rapport_au_sport: "Le sport d'endurance n'a pas été une évidence pour moi. J'ai
+      commencé la course à pied avec l'envie d'arrêter la cigarette et de me
+      sentir mieux dans ma peau, à une époque où mon quotidien était bien loin
+      de celui d'une sportive. Et surtout, je n'ai pas aimé courir tout de
+      suite. Même chose avec le vélo : de l'inconfort, de l'appréhension et
+      franchement peu de plaisir au départ. Mais j'ai toujours aimé les
+      challenges, particulièrement ceux qui me demandent de sortir de ma zone de
+      confort. Petit à petit, j'ai persévéré, progressé et découvert ce dont
+      j'étais capable. Aujourd'hui, l'endurance et le triathlon ont changé ma
+      vie."
+    vision: >-
+      Pour moi, le coaching ne se résume pas à la performance ou à un chrono.
+      Bien sûr, j'aime les challenges et cette envie d'aller chercher toujours
+      un peu plus loin, mais je veux surtout accompagner chaque personne dans
+      son propre parcours. Comprendre d'où elle part, ce qui la motive, ce qui
+      lui fait peur et ce qu'elle veut accomplir. Construire progressivement,
+      transmettre mes connaissances et lui donner les outils pour progresser et
+      prendre confiance.
+
+
+      Parce qu'on peut commencer sans aimer ça, sans être doué et sans se sentir légitime… et finir par changer sa vie.
+    prenom: Elo
+    parcours: >-
+      Mon parcours sportif s'est construit progressivement. Après quelques
+      années de course à pied sans véritable structure, une inscription un peu
+      par hasard au T24 en 2021 m'a fait découvrir le triathlon, mais surtout
+      l'ambiance des courses, l'adrénaline d'un dossard et le plaisir de relever
+      des défis.
+
 
       À partir de 2024, ma pratique prend une autre dimension : des entraînements plus réguliers, des objectifs plus ambitieux et une vraie passion pour les sports d'endurance.
 
-      En parallèle, mon parcours professionnel semblait pourtant tout tracé : études en sciences politiques, spécialisation dans l'humanitaire puis une mission en Afghanistan. Une expérience difficile qui m'a amenée à remettre beaucoup de choses en question et à chercher ailleurs ce sentiment d'utilité et d'accomplissement qui m'avait attirée vers ce métier.
-    pourquoi_coach: "Dans une période où j'avais perdu une partie de mes repères, le sport m'a permis de retrouver des objectifs, de l'accomplissement et une forme d'alignement. C'est aussi pour ça que j'ai envie de transmettre aujourd'hui. Parce que je sais ce que c'est de commencer sans être sportive, de ne pas aimer courir, d'avoir peur sur un vélo ou simplement de penser que certaines choses ne sont pas faites pour soi. Je veux montrer qu'on n'a pas besoin d'avoir toujours été sportif pour se lancer, progresser et découvrir jusqu'où on est capable d'aller."
-    vision: |-
-      Pour moi, le coaching ne se résume pas à la performance ou à un chrono. Bien sûr, j'aime les challenges et cette envie d'aller chercher toujours un peu plus loin, mais je veux surtout accompagner chaque personne dans son propre parcours. Comprendre d'où elle part, ce qui la motive, ce qui lui fait peur et ce qu'elle veut accomplir. Construire progressivement, transmettre mes connaissances et lui donner les outils pour progresser et prendre confiance.
 
-      Parce qu'on peut commencer sans aimer ça, sans être doué et sans se sentir légitime… et finir par changer sa vie.
+      En parallèle, mon parcours professionnel semblait pourtant tout tracé : études en sciences politiques, spécialisation dans l'humanitaire puis une mission en Afghanistan. Une expérience difficile qui m'a amenée à remettre beaucoup de choses en question et à chercher ailleurs ce sentiment d'utilité et d'accomplissement qui m'avait attirée vers ce métier.
+    diplomes:
+      - CQP IF Double mention Musculation Personal Training et Cours Collectifs
+    photo: /images/photos/elo.webp
     specialites:
       - "[À COMPLÉTER]"
-    diplomes:
-      - "CQP IF Double mention Musculation Personal Training et Cours Collectifs"
-contact_intro: "Un message, et on s'occupe du reste. Dis-nous où tu en es et où tu veux aller : on te recontacte pour en parler."
+    pourquoi_coach: Dans une période où j'avais perdu une partie de mes repères, le
+      sport m'a permis de retrouver des objectifs, de l'accomplissement et une
+      forme d'alignement. C'est aussi pour ça que j'ai envie de transmettre
+      aujourd'hui. Parce que je sais ce que c'est de commencer sans être
+      sportive, de ne pas aimer courir, d'avoir peur sur un vélo ou simplement
+      de penser que certaines choses ne sont pas faites pour soi. Je veux
+      montrer qu'on n'a pas besoin d'avoir toujours été sportif pour se lancer,
+      progresser et découvrir jusqu'où on est capable d'aller.
+contact_intro: "Un message, et on s'occupe du reste. Dis-nous où tu en es et où
+  tu veux aller : on te recontacte pour en parler."
