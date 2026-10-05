@@ -50,7 +50,8 @@ coachs:
       - CQP IF Double mention Musculation Personal Training et Cours Collectifs
     photo: /images/photos/guillaume.webp
     specialites:
-      - "[À COMPLÉTER]"
+      - Course à pied
+      - Préparation physique
     pourquoi_coach: "Parce que quelqu'un a cru en moi avant que j'y croie moi-même.
       Lorsque mon frère m'a proposé de courir un marathon, je ne pensais pas en
       être capable. Pourtant, ce simple défi a profondément changé ma vie.
@@ -59,7 +60,8 @@ coachs:
       quelque chose qui paraissait parfois inaccessible. Devenir coach, c'est
       mettre ma passion du sport, mon empathie et mon envie d'aider les autres
       au service de cette mission."
-  - accroche: "[À COMPLÉTER]"
+  - accroche: « Parce qu'on peut commencer sans aimer ça, sans être doué et sans se
+      sentir légitime… et finir par changer sa vie. »
     rapport_au_sport: "Le sport d'endurance n'a pas été une évidence pour moi. J'ai
       commencé la course à pied avec l'envie d'arrêter la cigarette et de me
       sentir mieux dans ma peau, à une époque où mon quotidien était bien loin
@@ -70,17 +72,13 @@ coachs:
       confort. Petit à petit, j'ai persévéré, progressé et découvert ce dont
       j'étais capable. Aujourd'hui, l'endurance et le triathlon ont changé ma
       vie."
-    vision: >-
-      Pour moi, le coaching ne se résume pas à la performance ou à un chrono.
+    vision: Pour moi, le coaching ne se résume pas à la performance ou à un chrono.
       Bien sûr, j'aime les challenges et cette envie d'aller chercher toujours
       un peu plus loin, mais je veux surtout accompagner chaque personne dans
       son propre parcours. Comprendre d'où elle part, ce qui la motive, ce qui
       lui fait peur et ce qu'elle veut accomplir. Construire progressivement,
       transmettre mes connaissances et lui donner les outils pour progresser et
       prendre confiance.
-
-
-      Parce qu'on peut commencer sans aimer ça, sans être doué et sans se sentir légitime… et finir par changer sa vie.
     prenom: Elo
     parcours: >-
       Mon parcours sportif s'est construit progressivement. Après quelques
@@ -98,7 +96,9 @@ coachs:
       - CQP IF Double mention Musculation Personal Training et Cours Collectifs
     photo: /images/photos/elo.webp
     specialites:
-      - "[À COMPLÉTER]"
+      - Course à pied
+      - Triathlon
+      - Préparation physique
     pourquoi_coach: Dans une période où j'avais perdu une partie de mes repères, le
       sport m'a permis de retrouver des objectifs, de l'accomplissement et une
       forme d'alignement. C'est aussi pour ça que j'ai envie de transmettre
