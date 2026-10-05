@@ -1,20 +1,23 @@
 duo:
   titre: Deux parcours et une même vision du coaching.
   accroche: Viens, on rêve ?
-  texte: >-
+  texte: >
     Endurall est né comme beaucoup de nos idées un peu folles : pendant un run.
 
 
     Avec Elo, on a ce truc de rarement se dire non. Un Ironman ? Carrément. L'Ultra Marin ? Évidemment. Monter notre boîte ensemble ? Allez, on le fait !
 
 
-    On aime les défis, les aventures et surtout cette sensation incroyable de se fixer un objectif, de tout donner pour l'atteindre et de pouvoir se dire : « je l'ai fait ».
+    Endurall c’est une histoire d’amitié sincère, de passion partagée pour les sports d’endurance. 
 
 
-    Alors Endurall, c'est exactement ça : vous accompagner dans vos propres aventures, de vos premières 30 minutes de course jusqu'au marathon, au triathlon ou à ce défi un peu fou qui vous trotte dans la tête.
+    On vibre au rythme des défis, pour les expériences sportives. Mais, le sport ce n’est pas qu’une histoire de performance.  Le sport, on l’aime surtout pour l’aventure qu’il représente, pour les émotions immenses qu’il peut susciter.  
 
 
-    Nous, on rêve déjà au prochain défi. Et toi, c'est quoi le tien ?
+    Alors, on a monté Endurall pour vous faire rêver à votre retour : de courir 30 minutes sans suffoquer à performer sur un Ironman ou à donner vie à ce défi un peu fou qui vous trotte dans la tête. 
+
+
+    Nous on rêve déjà..
   photo: /images/uploads/20260517_142134.jpg
 coachs:
   - accroche: « Parce que parfois il suffit qu'on croit en nous pour accomplir ce
@@ -62,16 +65,14 @@ coachs:
       au service de cette mission."
   - accroche: « Parce qu'on peut commencer sans aimer ça, sans être doué et sans se
       sentir légitime… et finir par changer sa vie. »
-    rapport_au_sport: "Le sport d'endurance n'a pas été une évidence pour moi. J'ai
-      commencé la course à pied avec l'envie d'arrêter la cigarette et de me
-      sentir mieux dans ma peau, à une époque où mon quotidien était bien loin
-      de celui d'une sportive. Et surtout, je n'ai pas aimé courir tout de
-      suite. Même chose avec le vélo : de l'inconfort, de l'appréhension et
-      franchement peu de plaisir au départ. Mais j'ai toujours aimé les
-      challenges, particulièrement ceux qui me demandent de sortir de ma zone de
-      confort. Petit à petit, j'ai persévéré, progressé et découvert ce dont
-      j'étais capable. Aujourd'hui, l'endurance et le triathlon ont changé ma
-      vie."
+    rapport_au_sport: Le sport d’endurance n'a pas été une évidence pour moi.… loin
+      de là. J’ai commencé la course à pied pour arrêter de fumer ! Courir 15min
+      était une épreuve, je n’avais ni le cardio, ni l’endurance ni la
+      musculature requise. En revanche, courir a  immédiatement réveillé en moi
+      cette volonté de me dépasser, de me prouver que j’étais capable de ce qui
+      relevait, alors, de l’impensable. A force de persévérance, d’une épreuve
+      est devenue une nécessité, un besoin. Le sport d’endurance a changé ma
+      vie.
     vision: Pour moi, le coaching ne se résume pas à la performance ou à un chrono.
       Bien sûr, j'aime les challenges et cette envie d'aller chercher toujours
       un peu plus loin, mais je veux surtout accompagner chaque personne dans
@@ -81,17 +82,16 @@ coachs:
       prendre confiance.
     prenom: Elo
     parcours: >-
-      Mon parcours sportif s'est construit progressivement. Après quelques
-      années de course à pied sans véritable structure, une inscription un peu
-      par hasard au T24 en 2021 m'a fait découvrir le triathlon, mais surtout
-      l'ambiance des courses, l'adrénaline d'un dossard et le plaisir de relever
-      des défis.
+      Après quelques années à courir sans structure ni objectif, à m’entraîner
+      en dilettante, une inscription hasardeuse à la première édition du T24 en
+      2021 est venue changer ma pratique. j’ai découvert une discipline mais
+      surtout, une passion. 
 
 
-      À partir de 2024, ma pratique prend une autre dimension : des entraînements plus réguliers, des objectifs plus ambitieux et une vraie passion pour les sports d'endurance.
+      A partir de 2023, le loisir devenait passion et mon quotidien se construisait autour des sports d’endurance. Je me suis inscrite à mes premières courses d’endurance (marathon, triathlon) avec une participation significative au T24 de l’Ile de Ré en individuel, expérience qui m’a marquée pour l’adrénaline, l’introspection et le dépassement de soi. 
 
 
-      En parallèle, mon parcours professionnel semblait pourtant tout tracé : études en sciences politiques, spécialisation dans l'humanitaire puis une mission en Afghanistan. Une expérience difficile qui m'a amenée à remettre beaucoup de choses en question et à chercher ailleurs ce sentiment d'utilité et d'accomplissement qui m'avait attirée vers ce métier.
+      Carrière dans l’humanitaire avec une première mission en Afghanistan. 
     diplomes:
       - CQP IF Double mention Musculation Personal Training et Cours Collectifs
     photo: /images/photos/elo.webp
@@ -101,7 +101,7 @@ coachs:
       - Préparation physique
     pourquoi_coach: Dans une période où j'avais perdu une partie de mes repères, le
       sport m'a permis de retrouver des objectifs, de l'accomplissement et une
-      forme d'alignement. C'est aussi pour ça que j'ai envie de transmettre
+      forme d'alignement. C'est aussi ça que j'ai envie de transmettre
       aujourd'hui. Parce que je sais ce que c'est de commencer sans être
       sportive, de ne pas aimer courir, d'avoir peur sur un vélo ou simplement
       de penser que certaines choses ne sont pas faites pour soi. Je veux
