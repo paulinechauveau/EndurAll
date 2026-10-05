@@ -1,63 +1,89 @@
-intro: "Choisis d'abord ce que tu veux travailler, puis la formule d'accompagnement qui te convient."
+intro: Choisis d'abord ce que tu veux travailler, puis la formule
+  d'accompagnement qui te convient.
 disciplines:
-  - id: "course"
-    titre: "Course à pied"
-    resume: "Du premier objectif running jusqu'à la préparation de compétitions : 5 km, 10 km, semi-marathon, marathon, trail ou simplement courir mieux et plus régulièrement."
+  - id: course
+    titre: Course à pied
+    resume: "Du premier objectif running jusqu'à la préparation de compétitions : 5
+      km, 10 km, semi-marathon, marathon, trail ou simplement courir mieux et
+      plus régulièrement."
     exemples:
-      - "Débuter ou reprendre la course à pied"
-      - "Du 5 km au marathon, en passant par le trail"
-      - "Progresser en endurance et en performance"
-    apport: |-
-      Que tu souhaites commencer à courir, préparer ton premier 10 km, franchir la ligne d'arrivée d'un marathon ou battre ton record, on construit avec toi un entraînement adapté à ton niveau, ton quotidien et tes objectifs. On t'accompagne séance après séance pour ajuster ta charge, analyser ta progression et t'aider à mieux comprendre ton entraînement.
+      - Débuter ou reprendre la course à pied
+      - Du 5 km au marathon, en passant par le trail
+      - Progresser en endurance et en performance
+    apport: >-
+      Que tu souhaites commencer à courir, préparer ton premier 10 km, franchir
+      la ligne d'arrivée d'un marathon ou battre ton record, on construit avec
+      toi un entraînement adapté à ton niveau, ton quotidien et tes objectifs.
+      On t'accompagne séance après séance pour ajuster ta charge, analyser ta
+      progression et t'aider à mieux comprendre ton entraînement.
+
 
       Ton objectif devient notre projet : progresser durablement, prendre du plaisir et aller chercher ce dont tu te pensais peut-être incapable.
     photo: ""
-  - id: "triathlon"
-    titre: "Triathlon"
-    resume: "Un accompagnement autour des trois disciplines, avec une planification adaptée à ton niveau, tes contraintes et ton objectif."
+  - id: triathlon
+    titre: Triathlon
+    resume: Un accompagnement autour des trois disciplines, avec une planification
+      adaptée à ton niveau, tes contraintes et ton objectif.
     exemples:
-      - "Découvrir le triathlon ou préparer ton premier"
-      - "Progresser sur une ou plusieurs disciplines"
-      - "Préparer une distance, jusqu'au 70.3 et à l'IronMan"
-    apport: |-
-      Trois disciplines, un seul objectif. On t'aide à trouver le bon équilibre entre natation, vélo et course à pied pour progresser. On construit ta préparation autour de ton niveau, de tes disponibilités et de ton objectif, du premier triathlon aux longues distances (70.3 et IronMan).
+      - Découvrir le triathlon ou préparer ton premier
+      - Progresser sur une ou plusieurs disciplines
+      - Préparer une distance, jusqu'au 70.3 et à l'IronMan
+    apport: >-
+      Trois disciplines, un seul objectif. On t'aide à trouver le bon équilibre
+      entre natation, vélo et course à pied pour progresser. On construit ta
+      préparation autour de ton niveau, de tes disponibilités et de ton
+      objectif, du premier triathlon aux longues distances (70.3 et IronMan).
+
 
       L'objectif : arriver confiant et prêt pour profiter pleinement de ton prochain défi !
     photo: ""
-  - id: "prepa"
-    titre: "Préparation physique"
-    resume: "Renforcement musculaire, développement des qualités physiques, prévention, remise en forme et accompagnement complémentaire à ta pratique sportive."
+  - id: prepa
+    titre: Préparation physique
+    resume: Renforcement musculaire, développement des qualités physiques,
+      prévention, remise en forme et accompagnement complémentaire à ta pratique
+      sportive.
     exemples:
-      - "Remise en forme, reprise d'activité et perte de poids"
-      - "Renforcement musculaire et condition physique"
-      - "Préparation complémentaire à ton sport"
-    apport: |-
-      Être plus fort, plus mobile, plus résistant : la préparation physique est là pour t'aider à devenir un sportif plus complet. Chez Endurall, on construit des séances adaptées à ton sport, ton niveau et tes besoins pour développer tes qualités physiques et accompagner ta progression.
+      - Remise en forme, reprise d'activité et perte de poids
+      - Renforcement musculaire et condition physique
+      - Préparation complémentaire à ton sport
+    apport: >-
+      Être plus fort, plus mobile, plus résistant : la préparation physique est
+      là pour t'aider à devenir un sportif plus complet. Chez Endurall, on
+      construit des séances adaptées à ton sport, ton niveau et tes besoins pour
+      développer tes qualités physiques et accompagner ta progression.
+
 
       L'objectif : construire un corps capable de répondre aux exigences de ta pratique et de tes ambitions.
     photo: ""
 formules:
-  - nom: "Endurall Start"
-    philosophie: "Idéal pour commencer le coaching personnalisé."
-    accroche: "Une formule simple et accessible pour bénéficier des fondamentaux du coaching, idéale pour avancer à ton rythme et en autonomie."
+  - nom: Endurall Start
+    philosophie: Idéal pour commencer le coaching personnalisé.
+    accroche: Une formule simple et accessible pour bénéficier des fondamentaux du
+      coaching, idéale pour avancer à ton rythme et en autonomie.
     prix: "[À COMPLÉTER]"
     mise_en_avant: false
-    pour_qui: "Pour toi si tu veux les fondamentaux du coaching et avancer à ton rythme, en autonomie."
+    pour_qui: Pour toi si tu veux les fondamentaux du coaching et avancer à ton
+      rythme, en autonomie.
     inclus:
-      - "Plan d'entraînement sur 4 semaines, révisé toutes les deux semaines"
-      - "Appel bi-mensuel"
-      - "Conseils sur la pratique sportive"
-    fonctionnement: "Ton plan d'entraînement couvre 4 semaines et on le révise toutes les deux semaines. On fait le point ensemble lors d'un appel bi-mensuel. [À COMPLÉTER] Outil utilisé pour suivre ton plan."
-  - nom: "Endurall Premium"
-    philosophie: "Coaching 360° pour t'accompagner dans ton quotidien."
-    accroche: "L'accompagnement le plus complet et personnalisable, pour bénéficier d'un suivi au plus près de tes objectifs."
+      - Plan d'entraînement sur 4 semaines, révisé toutes les deux semaines
+      - Appel bi-mensuel
+      - Conseils sur la pratique sportive
+    fonctionnement: Ton plan d'entraînement couvre 4 semaines et on le révise toutes
+      les deux semaines. On fait le point ensemble lors d'un appel bi-mensuel.
+  - nom: Endurall Premium
+    philosophie: Coaching 360° pour t'accompagner dans ton quotidien.
+    accroche: L'accompagnement le plus complet et personnalisable, pour bénéficier
+      d'un suivi au plus près de tes objectifs.
     prix: "[À COMPLÉTER]"
     mise_en_avant: true
-    pour_qui: "Pour toi si tu veux un suivi au plus près de tes objectifs, avec un accompagnement complet et personnalisable."
+    pour_qui: Pour toi si tu veux un suivi au plus près de tes objectifs, avec un
+      accompagnement complet et personnalisable.
     inclus:
-      - "Plan d'entraînement sur 4 semaines, révisé chaque semaine"
-      - "Échanges fréquents sur WhatsApp"
-      - "Appel hebdomadaire"
-      - "Conseils sur la pratique sportive (nutrition sportive, équipements)"
-      - "Accompagnement sur des séances clés"
-    fonctionnement: "Ton plan d'entraînement couvre 4 semaines et on le révise chaque semaine. On échange souvent sur WhatsApp, on fait un appel chaque semaine et on t'accompagne sur tes séances clés. [À COMPLÉTER] Outil utilisé pour suivre ton plan."
+      - Plan d'entraînement sur 4 semaines, révisé chaque semaine
+      - Échanges fréquents sur WhatsApp
+      - Appel hebdomadaire
+      - Conseils sur la pratique sportive (nutrition sportive, équipements)
+      - Accompagnement sur des séances clés
+    fonctionnement: "Ton plan d'entraînement couvre 4 semaines et on le révise
+      chaque semaine. On échange souvent sur WhatsApp, on fait un appel chaque
+      semaine et on t'accompagne sur tes séances clés. "
